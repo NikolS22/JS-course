@@ -66,3 +66,7 @@ console.log(undefined + 1); //NaN (number), undefined-->NaN --> NaN+1=NaN
 
 console.log(" \t \n" - 2); //-2 (number), " \t \n"->""->0 --> 0-2=-2
 
+let favoriteFilms=['The Social Network', 'jOBS', 'Eat, Pray, Love'];
+console.log(favoriteFilms[0]);
+favoriteFilms.push('Beauty and the Beast');
+console.log(favoriteFilms[favoriteFilms.length-1]);
