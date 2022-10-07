@@ -1,22 +1,22 @@
-console.log('Hello world!')
+console.log("Hello world!");
 
-const ourPlanetName ='Земля';
+const ourPlanetName = "Земля";
 console.log(ourPlanetName);
 
-let timeUser = '12:00';
+let timeUser = "12:00";
 console.log(timeUser);
 
-let countArticle=5;
+let countArticle = 5;
 console.log(countArticle);
 
-let isCatch= true;
+let isCatch = true;
 console.log(isCatch);
 
-let surName = 'Samulkina';
+let surName = "Samulkina";
 console.log(surName);
 
-let Name = 'Olga';
+let Name = "Olga";
 console.log(Name);
 
-let middleName = 'Evgenevna';
+let middleName = "Evgenevna";
 console.log(middleName);
