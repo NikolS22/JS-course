@@ -123,6 +123,19 @@ const Years = () => {
 
 Years();
 
+const filterYears = () => {
+  const result = [];
+  for (let i = 1; i < 2020; i += 1) {
+    if (getDigitsSum(i) === 13) {
+      result.push(i);
+    }
+  }
+
+  return result;
+};
+
+console.log(filterYears());
+
 /* 12. Сделайте функцию isEven() (even - это четный), которая параметром 
 принимает целое число и проверяет: четное оно или нет. Если четное - пусть 
 функция возвращает true, если нечетное - false. */
@@ -147,6 +160,19 @@ const newMass = (n) => {
 
 const massiv = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log(newMass(massiv));
+
+const filterArr = (arr) => {
+  const result = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    if (isEven(arr[i])) {
+      result.push(arr[i]);
+    }
+  }
+
+  return result;
+};
+
+console.log(filterArr([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
 /* 14. Сделайте функцию getDivisors, которая параметром принимает число и 
 возвращает массив его делителей (чисел, на которое делится данное число). */
@@ -178,6 +204,16 @@ const sumDigital = (n) => {
 };
 
 console.log(sumDigital(11973));
+
+const lessNine = (num) => {
+  console.log(`Функция lessNine вызванна с параметром ${num}`);
+  if (getDigitsSum(num) > 9) {
+    return lessNine(getDigitsSum(num));
+  }
+  return getDigitsSum(num);
+};
+
+console.log(lessNine(156957565523));
 
 /* 16. Напишите стрелочную функцию, которая будет возвращать true если 
 строка является палиндромом и false в противном случае. */
