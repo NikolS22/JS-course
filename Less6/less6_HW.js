@@ -42,14 +42,15 @@ console.log(deleteСharacters(str, length));
 строки необходимо перевести в верхний регистр. */
 
 const insertDash = str =>{
+  return str.toUpperCase().replace(/\s/g, "-");
   /* return str.trim().toUpperCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-"); */
-  let strNew = str;
+/*   let strNew = str;
   let count = str.split(" ").length - 1;
   for (let i=0; i<count; i++)
   {
     strNew = strNew.toUpperCase().replace(" ","-");
   }
-  return strNew;
+  return strNew; */
 }
 
 console.log(insertDash(str));
@@ -106,7 +107,8 @@ console.log(changeRegister(str));
 от всех не буквенно-цифровых символов. */
 
 const removeChar = str => {
-  let chisla = "1234567890";
+  return str.replace(/[^a-zа-я\d\s]/ig, "");
+  /* let chisla = "1234567890";
   let stroka = [];
   for (let i = 0; i<str.length; i++) {
     if(str[i]==" "||(str[i]!=str[i].toUpperCase()&&str[i]==str[i].toLowerCase()
@@ -115,7 +117,7 @@ const removeChar = str => {
       stroka.push(str[i]);
     }
   }
-  return stroka.join('');
+  return stroka.join(''); */
 }
 
 console.log(removeChar(str));
@@ -184,8 +186,8 @@ insensitiveSearch(str_1, str_2)
 без пробелов, при этом каждое слово внутри строки пишется с заглавной буквы.*/
 
 const initCap = (str) => {
-  return str.toLowerCase().replace(/(?:^|\s)[a-z]/g, function (m) {
-    return m.toUpperCase().replace(/\s+/g, "");
+  return str.toLowerCase().replace(/(?:^|\s)[a-z]/g, function (letter) {
+    return letter.toUpperCase().replace(/\s+/g, "");
   });
 };
 
@@ -199,7 +201,7 @@ console.log(initCap(str));
 let strS = "HelloWorldHello";
 
 const initSnake = (str) => {
-  str = str.replace(/[A-Z]/g, function (letter) {
+  str = str.replace(/[A-ZА-Я]/g, function (letter) {
     return "_" + letter.toLowerCase();
   });
   return str.replace(/^_/, "");
@@ -315,15 +317,14 @@ console.log(count(str,"l"));
 строки str. */
 
 str = "     Hello  big      world.    ";
+//console.log(str.length);
 
 const strip = (str) => {
-  return str
-    .replace(/\s+/g, " ") // заменить длинные пробелы одним
-    .replace(/^\s/, "") // удалить пробелы в начале строки
-    .replace(/\s$/, ""); // удалить пробелы в конце строки
+  return str.trim().replace(/\s+/g, " ");
 }
 
 console.log(strip(str));
+//console.log(strip(str).length);
 
 /* 21. Напишите функцию cutString(str, n), которая удаляет лишние слова из
 строки str, оставив в ней n слов. */
