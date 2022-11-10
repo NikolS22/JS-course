@@ -262,6 +262,26 @@ String.prototype.endsWith = function (str1) {
 
 console.log(str.endsWith(str1));
 
+/* 15 (2). Создайте функцию endsWith(), который сравнивает подстроку str1
+с окончанием исходной строки str и определяет заканчивается ли строка 
+символами подстроки. */
+
+console.log("задача 15 2");
+const endsWith = () => {
+  if (str1.length < str.length) {
+    if (str1 === str.slice(str.length - str1.length)) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    console.log("Ошибка в длинне строк");
+  }
+};
+
+console.log(endsWith());
+
+
 /* 16. Напишите функцию getSubstr(str, char, pos), которая возвращает часть 
 строки, расположенную после или до указанного символа char в зависимости от 
 параметра pos. */
