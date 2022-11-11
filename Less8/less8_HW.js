@@ -85,11 +85,14 @@ const a = [1, 2, 3],
   b = [4, 5, 6],
   c = [7, 8, 9];
 
-const getArr = (a, b, c) => {
+const getArr = (a, b, c) =>"[" + a.concat(b, c).sort((a, b) => b - a).join(" ") + "]";
+
+/* {
   let arr = a.concat(b, c);
   arr.sort((a, b) => b - a);
   return "[" + arr.join(" ") + "]";
-};
+}; */
+
 console.log(getArr(a, c, b));
 
 /* 8.	Дан двухмерный массив с числами, например
@@ -107,7 +110,7 @@ console.log(sumArr2(arr_2));
 
 //console.log(arr_1);
 
-const hendReverse = (arr) => {
+const handReverse = (arr) => {
   let result = [];
   for (i=arr.length-1; i>=0; i--) {
     result.push(arr[i]);
@@ -115,24 +118,28 @@ const hendReverse = (arr) => {
   return result;
 }
 
-console.log(hendReverse(arr_1));
+console.log(handReverse(arr_1));
 
 /* 10. Дан массив с числами. Узнайте сколько элементов с начала 
 массива надо сложить, чтобы в сумме получилось больше 10-ти. */
 
 const arr_3 = [0, 7, 1, 4, 7, 9];
 
-const sumTen = arr => {
-  let k =0;
+const sumTen = (arr) => {
+  let k = 0;
   let sum = 0;
-  while (sum<11) {
-    sum+=arr[k];
+  while (sum < 11) {
+    sum += arr[k];
     k++;
   }
   return k;
-}
+};
 
 console.log(sumTen(arr_3));
+
+const sumTen2 = (arr) => arr.reduce((pre, cur, ind) => pre>10?console.log(ind):pre+cur);
+
+sumTen2(arr_3);
 
 /* 11. Напишите функцию arrayFill, которая будет заполнять массив
 заданными значениями. Первым параметром функция принимает значение, 
@@ -150,3 +157,6 @@ const arrayFill = (el, kol) => {
 
 console.log(arrayFill('x', 5));
 
+const arrayFill2 = (el, kol) => new Array(kol).fill(el,0,kol);
+
+console.log(arrayFill2('y', 3));
