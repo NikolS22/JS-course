@@ -17,9 +17,9 @@ const numbers = [2, 3, 5, 7, 11, 13, 17, 19];
 
 const currentSums = (numbers) => {
   let result = [];
-  numbers.reduce((pre, cur, ind) => result[ind] = pre + cur, 0);
+  numbers.reduce((pre, cur, ind) => (result[ind] = pre + cur), 0);
   return result;
-};  
+};
 
 console.log(currentSums(numbers));
 
@@ -120,6 +120,24 @@ const handReverse = (arr) => {
 
 console.log(handReverse(arr_1));
 
+/* const myArr = [1,2,3,4,5,6,7,8,9];
+const myReturnArr =[]
+myArr.forEach((e) => myReturnArr.unshift(e));
+console.log("9.", myReturnArr); */
+
+/* const arr = [1, 2, 3, 45, 5, 6, 7, 85, 9];
+
+const customReverce = (arr) => {
+  const result = [];
+
+  for (let value of arr) {
+    result.unshift(value);
+  }
+  return result;
+};
+
+console.log(customReverce(arr)); */
+
 /* 10. Дан массив с числами. Узнайте сколько элементов с начала 
 массива надо сложить, чтобы в сумме получилось больше 10-ти. */
 
@@ -140,6 +158,44 @@ console.log(sumTen(arr_3));
 const sumTen2 = (arr) => arr.reduce((pre, cur, ind) => pre>10?console.log(ind):pre+cur);
 
 sumTen2(arr_3);
+
+/* const sumTen3 = (arr) => {
+ arr.reduce((pre, cur, ind) =>
+ {
+  if (pre+cur <=10) {
+    return pre+cur;
+  }
+  else {
+    return ind;
+  }
+
+ },0);
+}
+
+console.log(sumTen3(arr_3)); */
+
+/* const arr = [10, 2, 3, 4, -5, 6, 7, 8, 9];
+
+const sumMoreTen = (arr) => {
+  let lastIndex;
+  arr.reduce((prev, cur, index) => {
+    if (prev + cur <= 10) {
+      lastIndex = index;
+      return prev + cur;
+    }
+  }, 0);
+
+  if (lastIndex === 0) {
+    return lastIndex + 1;
+  }
+  if (typeof lastIndex === "undefined") {
+    return 1;
+  }
+  return lastIndex + 2;
+};
+
+console.log(sumMoreTen(arr)); */
+
 
 /* 11. Напишите функцию arrayFill, которая будет заполнять массив
 заданными значениями. Первым параметром функция принимает значение, 
