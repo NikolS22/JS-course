@@ -160,5 +160,25 @@ const timer = (finish = 0) => (start) => {
 //timer()(10);
 //timer(5)(10);
 
-const startTimer = timer();
-startTimer(10);
+/* const startTimer = timer();
+startTimer(10); */
+
+
+const timer1 = (start, end) => {
+  return function timerCounter() {
+    if (start !== end) {
+      console.log(start);
+      setTimeout(() => {
+        start -= 1;
+        timerCounter();
+      }, 1000);
+    } else {
+      console.log("таймер закончился");
+    }
+  };
+};
+
+const firstTimer = timer1(15, 10);
+
+firstTimer();
+
