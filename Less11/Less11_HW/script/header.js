@@ -4,13 +4,12 @@
 
 ● header содержащий заголовок страницы
 ● контейнер с контентом страницы */
-console.log("импорт из head");
+
 //Построение header
 export const createHeader = function () {
   const header = document.createElement("header");
   header.className = "header_style";
   header.textContent = "To do list";
-
   document.body.append(header);
 };
 
