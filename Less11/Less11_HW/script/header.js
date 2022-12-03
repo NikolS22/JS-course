@@ -18,6 +18,5 @@ export const createHeader = function () {
 export const createContant = function () {
   const main_div = document.createElement("div");
   main_div.className = "wrapper";
-  const body = document.body;
-  body.append(main_div);
+  document.body.append(main_div);
 };

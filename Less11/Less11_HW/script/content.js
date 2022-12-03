@@ -28,16 +28,17 @@ export const createAdd = function () {
   const btn = document.createElement("img");
   btn.className = "img_style";
   btn.src = "./pic/add.jpg";
-  document.querySelector("input").placeholder = "Введите новую задачу";
+  const btn_inp = document.querySelector("input");
+  btn_inp.placeholder = "Введите новую задачу";
 
   div2.append(btn);
 
   //Кнопка добавить новую запись в список
   const get_add = function () {
-    const input_text = document.querySelector("input").value;
+    const input_text = btn_inp.value;
     if (input_text) {
       createLi(input_text);
-      document.querySelector("input").value = "";
+      btn_inp.value = "";
     }
   };
 
