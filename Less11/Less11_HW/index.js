@@ -12,10 +12,6 @@
 Используя наработки первого задания, добавить возможность добавления To Do в
 список с помощью поля ввода input и кнопки создания нового To Do. */
 
-//import * as Create from './header.js'
-
-
-
 //Построение header
 const createHeader = function () {
   const header = document.createElement("header");

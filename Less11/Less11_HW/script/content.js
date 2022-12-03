@@ -7,7 +7,7 @@
 ● кнопка добавления To Do */
 
 //Создание области ввода
-const createAdd = function () {
+export const createAdd = function () {
   const div = document.createElement("div");
   div.className = "list_style";
   const main_div = document.querySelector("div");
@@ -28,21 +28,24 @@ const createAdd = function () {
   const btn = document.createElement("img");
   btn.className = "img_style";
   btn.src = "./pic/add.jpg";
+  document.querySelector("input").placeholder = "Введите новую задачу";
 
   div2.append(btn);
 
   //Кнопка добавить новую запись в список
   const get_add = function () {
     const input_text = document.querySelector("input").value;
-    createLi(input_text);
-    document.querySelector("input").value = "";
+    if (input_text) {
+      createLi(input_text);
+      document.querySelector("input").value = "";
+    }
   };
 
   btn.addEventListener("click", get_add);
 };
 
 //Добавление списка
-const createList = function () {
+export const createList = function () {
   const ul = document.createElement("ul");
   ul.className = "ul_style";
   const main_div = document.querySelector("div");
@@ -50,7 +53,7 @@ const createList = function () {
 };
 
 //Добавление элементов списка
-const createLi = function (text_li) {
+export const createLi = function (text_li) {
   //добавление строки списка
   const div = document.createElement("div");
   div.className = "list_style";

@@ -4,9 +4,9 @@
 
 ● header содержащий заголовок страницы
 ● контейнер с контентом страницы */
-
+console.log("импорт из head");
 //Построение header
-const createHeader = function () {
+export const createHeader = function () {
   const header = document.createElement("header");
   header.className = "header_style";
   header.textContent = "To do list";
@@ -15,7 +15,7 @@ const createHeader = function () {
 };
 
 //Создание контейнера для контента
-const createContant = function () {
+export const createContant = function () {
   const main_div = document.createElement("div");
   main_div.className = "wrapper";
   const body = document.body;
