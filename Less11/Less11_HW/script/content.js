@@ -9,9 +9,10 @@
 //Создание области ввода
 export const createAdd = function () {
   const div = document.createElement("div");
-  div.className = "list_style";
-  const main_div = document.querySelector("div");
-  main_div.append(div);
+  div.id="vvod"
+  div.className = "list_style_vvod";
+  const mainDiv = document.getElementById("mDiv")
+  mainDiv.append(div);
 
   //Добавление окна ввода
   const div1 = document.createElement("div");
@@ -28,38 +29,38 @@ export const createAdd = function () {
   const btn = document.createElement("img");
   btn.className = "img_style";
   btn.src = "./pic/add.jpg";
-  const btn_inp = document.querySelector("input");
-  btn_inp.placeholder = "Введите новую задачу";
+  const btnInp = document.querySelector("input");
+  btnInp.placeholder = "Введите новую задачу";
 
   div2.append(btn);
 
   //Кнопка добавить новую запись в список
-  const get_add = function () {
-    const input_text = btn_inp.value;
-    if (input_text) {
-      createLi(input_text);
-      btn_inp.value = "";
+  const getAdd = function () {
+    const inputText = btnInp.value;
+    if (inputText) {
+      createLi(inputText);
+      btnInp.value = "";
     }
   };
 
-  btn.addEventListener("click", get_add);
+  btn.addEventListener("click", getAdd);
 };
 
 //Добавление списка
 export const createList = function () {
   const ul = document.createElement("ul");
   ul.className = "ul_style";
-  const main_div = document.querySelector("div");
-  main_div.append(ul);
+  const mainDiv = document.getElementById("mDiv")
+  mainDiv.append(ul);
 };
 
 //Добавление элементов списка
-export const createLi = function (text_li) {
+export const createLi = function (textLi) {
   //добавление строки списка
   const div = document.createElement("div");
-  div.className = "list_style";
-  const main_div = document.querySelector("div");
-  main_div.append(div);
+  div.className = "list_style divList";
+  const mainDiv = document.getElementById("mDiv")
+  mainDiv.append(div);
 
   //добавление элемента списка
   const div1 = document.createElement("div");
@@ -67,43 +68,63 @@ export const createLi = function (text_li) {
 
   const li = document.createElement("li");
   li.className = "li_style";
-  li.textContent = "    " + text_li;
+  li.textContent = `     ${textLi}`;
 
-  const img_do = document.createElement("img");
+  const imgDo = document.createElement("img");
 
-  img_do.src = "./pic/un_ok.jpg";
-  img_do.className = "img_style";
+  imgDo.src = "./pic/un_ok.jpg";
+  imgDo.className = "img_style";
 
   //отметка о выполнении
 
-  const get_ok = function () {
+  const getOk = function () {
     li.classList.toggle("li_ok");
 
     if (li.classList.contains("li_ok")) {
-      img_do.src = "./pic/ok.jpg";
+      this.src = "./pic/ok.jpg";
     } else {
-      img_do.src = "./pic/un_ok.jpg";
+      this.src = "./pic/un_ok.jpg";
     }
   };
 
-  img_do.addEventListener("click", get_ok);
+  imgDo.addEventListener("click", getOk);
 
   //добавление кнопки удалить
   const div2 = document.createElement("div");
   div.append(div2);
 
-  const img_del = document.createElement("img");
-  img_del.src = "./pic/delete.jpg";
-  img_del.className = "img_style";
+  const imgDel = document.createElement("img");
+  imgDel.src = "./pic/delete.jpg";
+  imgDel.className = "img_style";
 
   div1.append(li);
-  li.prepend(img_do);
-  div2.append(img_del);
+  li.prepend(imgDo);
+  div2.append(imgDel);
 
   //удаление пункта списка
   const del = function () {
     div.className = "not_display";
   };
 
-  img_del.addEventListener("click", del);
+  imgDel.addEventListener("click", del);
 };
+
+//очистка списка
+export const cleanList = function () {
+  const clean = document.createElement("button");
+  clean.textContent="Очистить список";
+  clean.className="clean_list"
+  const div = document.getElementById("vvod");
+  div.after(clean);
+
+  const cleanListTab = function () {
+    let liList = document.getElementsByClassName("divList")
+    for (let strList of liList) {
+      strList.classList.add("not_display")
+    }
+  };
+
+  clean.addEventListener("click", cleanListTab);
+
+}
+

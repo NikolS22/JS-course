@@ -53,7 +53,7 @@ body {
 .ul_style {
   background: #ffffff;
   color: black;
-  margin-top: 3vw;
+  margin-top: 1vw;
 }
 
 .list_style {
@@ -61,7 +61,19 @@ body {
   justify-content: space-between;
   background: #ffffff;
   padding: 5px;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
+  color: black;
+  margin: 1%;
+  vertical-align: middle;
+  width: 50vw;
+}
+
+.list_style_vvod {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 5px;
+  margin-bottom: 5px;
   color: black;
   margin: 1%;
   vertical-align: middle;
@@ -81,4 +93,14 @@ body {
 
 .not_display {
   display: none;
+}
+
+.clean_list {
+  margin-left: 34vw;
+  width: 35vh;
+  height: 3vw;
+  text-align: center;
+  background: #ffffff;
+  border: none;
+  font-size: 20px;
 }

@@ -16,12 +16,13 @@ import * as Create from "./script/index_scr.js"
 
 //вызовы
 
-Create.createHeader();
-Create.createContant();
-Create.createAdd();
-Create.createList();
-Create.createLi("Создать header содержащий заголовок страницы");
-Create.createLi("Создать контейнер с контентом страницы");
-Create.createLi("Создать поле ввода input");
-Create.createLi("Создать список элементов (число элементов > 1)");
-Create.createLi("Создать кнопку добавления To Do");
+Create.head.createHeader();
+Create.head.createContant();
+Create.cont.createAdd();
+Create.cont.createList();
+Create.cont.createLi("Создать header содержащий заголовок страницы");
+Create.cont.createLi("Создать контейнер с контентом страницы");
+Create.cont.createLi("Создать поле ввода input");
+Create.cont.createLi("Создать список элементов (число элементов > 1)");
+Create.cont.createLi("Создать кнопку добавления To Do");
+Create.cont.cleanList();

@@ -15,7 +15,8 @@ export const createHeader = function () {
 
 //Создание контейнера для контента
 export const createContant = function () {
-  const main_div = document.createElement("div");
-  main_div.className = "wrapper";
-  document.body.append(main_div);
+  const mainDiv = document.createElement("div");
+  mainDiv.className = "wrapper";
+  mainDiv.id = "mDiv"
+  document.body.append(mainDiv);
 };
